@@ -71,6 +71,22 @@ app.post("/", (req, res) => {
 	
 });
 
+app.get("/:id/check", (req, res) => {
+	db.findOne({ url_short: req.params.id }, (err, doc) => {
+		if (err) {
+			console.log(err);
+			res.sendStatus(500);
+		} else if (doc)
+			res.send(doc.url_long);
+		else 
+			res.render('notFound');
+	});
+});
+
+app.get("*", (req, res) => {
+	res.send("Bad URL");
+});
+
 MongoClient.connect(settings.url, { useNewUrlParser: true }, (err, client) => {
 	if (err) return console.log(err);
 
