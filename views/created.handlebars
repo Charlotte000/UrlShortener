@@ -1,0 +1,18 @@
+<div class="container mt-5">
+	<div class="alert alert-success" role="alert">
+		<h4 class="alert-heading">Success</h4>
+		<p>The shorter URL is:</p>
+		<hr>
+		<input type="text" id="toCopy" class="form-control bg-light input-group mb-0" value="{{ url }}">
+	</div>
+	<button class="btn btn-info" onclick="copy()">Copy</button>
+</div>
+
+<script type="text/javascript">
+	function copy() {
+		var toCopy = document.getElementById("toCopy");
+		toCopy.select();
+		document.execCommand("copy");
+	}
+</script>
+
