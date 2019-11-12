@@ -64,7 +64,7 @@ app.post("/", (req, res) => {
 				console.log(err);
 				return res.sendStatus(500);
 			}
-			res.render('created', {url: `http://localhost:${PORT}/${url_short}`})
+			res.render('created', {url: `https://sh-ort.herokuapp.com/${url_short}`})
 		});
 
 	});
