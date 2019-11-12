@@ -1,9 +1,3 @@
-settings = {
-	login: '',     // MongoDB User login
-	password: '',  // MongoDB User password
-	dbName: '',    // Name of Mongo Data Base
-}
-
-settings.url = ``  // MongoDB data base connection url
+settings.url = `mongodb+srv://${settings.login}:${settings.password}@cluster0-ji8lc.gcp.mongodb.net/test?retryWrites=true&w=majority`
 
 module.exports = settings;
